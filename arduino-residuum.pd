@@ -1,0 +1,10 @@
+#N canvas 466 128 322 187 10;
+#X obj 34 28 outlet;
+#X obj 34 -76 inlet;
+#X obj 34 -24 arduino_message_parser;
+#X obj 34 1 list trim;
+#X obj 34 -51 comport;
+#X connect 1 0 4 0;
+#X connect 2 0 3 0;
+#X connect 3 0 0 0;
+#X connect 4 0 2 0;
