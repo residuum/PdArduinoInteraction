@@ -43,7 +43,8 @@ void new_byte(t_arduino_message_parser *x, t_floatarg new_value) {
 	}
 	if (port_type == 'a' || port_type == 'd') {
 		t_atom out[3];
-		char out_data[1];
+		char out_data[2];
+		out_data[2] = 0x00;
 		sprintf(out_data, "%c", port_type);
 		SETSYMBOL(&out[0], gensym(out_data));
 		SETFLOAT(&out[1], port);

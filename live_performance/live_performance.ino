@@ -32,7 +32,6 @@ int handRightState_3 = LOW;
 int resistorValue_R = 0;
 int resistorValue_Keypad = 0;
 
-int tempValue;
 int analogChange;
 
 void setup(){
@@ -57,7 +56,7 @@ void loop() {
   readDigitalValue(HAND_R_3, handRightState_3);
   readRoughValue(RESISTOR_KEYPAD, resistorValue_Keypad);
   if (analogChange == 20) {
-    readAnalogValue(RESISTOR_R, resistorValue_R);
+    //readAnalogValue(RESISTOR_R, resistorValue_R);
     analogChange = 0;
   }
   delay(10); 
@@ -99,7 +98,7 @@ void sendMessage(byte *data, int arraySize) {
  */
 void readDigitalValue(int trigger, int &value) {
   int arraySize = 1;
-  tempValue = digitalRead(trigger);
+  int tempValue = digitalRead(trigger);
   if (value != tempValue) {
     value = tempValue;
     byte data[arraySize];
@@ -113,7 +112,7 @@ void readDigitalValue(int trigger, int &value) {
  */
 void readAnalogValue(int trigger, int &value) {
   int arraySize = 2;
-  tempValue = analogRead(trigger);
+  int tempValue = analogRead(trigger);
   if (value != tempValue) {
     value = tempValue;
     byte data[arraySize];
@@ -130,7 +129,7 @@ void readAnalogValue(int trigger, int &value) {
  */
 void readRoughValue(int trigger, int &value) {
   int arraySize = 2;
-  tempValue = analogRead(trigger);
+  int tempValue = analogRead(trigger);
   if (abs(value - tempValue) > ANALOG_ROUGHNESS) {
     value = tempValue;
     byte data[arraySize];

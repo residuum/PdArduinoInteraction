@@ -1,4 +1,4 @@
-#N canvas 466 128 322 187 10;
+#N canvas 462 178 322 187 10;
 #X obj 34 28 outlet;
 #X obj 34 -76 inlet;
 #X obj 34 -24 arduino_message_parser;
