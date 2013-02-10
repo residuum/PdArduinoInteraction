@@ -1,0 +1,16 @@
+Arduino Interaction with Pd for Live Performance
+------------------------------------------------
+
+My Pd patch for performing live, using Pd as sample and MIDI recorder
+and looper. A lot of the stuff can be triggered by external buttons
+and a force sensitive resistor.
+
+On the Pd side you will need:
+- Some of my abstractions from 
+  https://github.com/residuum/Puredata-abstractions
+- Some libraries: comport, list-abs
+
+I will post pictures, demos and stuff on http://ix.residuum.org/
+
+For now, you can see part of the setup on 
+http://www.residuum.org/pic.html
