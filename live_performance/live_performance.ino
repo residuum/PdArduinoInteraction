@@ -56,7 +56,7 @@ void loop() {
   readDigitalValue(HAND_R_3, handRightState_3);
   readRoughValue(RESISTOR_KEYPAD, resistorValue_Keypad);
   if (analogChange == 20) {
-    //readAnalogValue(RESISTOR_R, resistorValue_R);
+    readAnalogValue(RESISTOR_R, resistorValue_R);
     analogChange = 0;
   }
   delay(10); 
@@ -137,8 +137,3 @@ void readRoughValue(int trigger, int &value) {
     sendMessage(data, arraySize);
   }
 }
-
-
-
-
-
