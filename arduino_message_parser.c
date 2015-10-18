@@ -50,7 +50,7 @@ void new_byte(t_arduino_message_parser *x, t_floatarg new_value) {
 
 	if (prev_byte > 0 && (new_value_int & 0x80) == 0) { /* analog, 2nd byte */
 		port_type = 'a';
-		port = prev_byte >> 3;
+		port = (prev_byte & 0x38)  >> 3;
 		value = ((prev_byte & 7) << 7) + (new_value_int & 0x7f);
 		x->first_byte = 0;
 	} else if ((new_value_int & 0xc0) == 0x80) { /* digital */
